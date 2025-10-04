@@ -1,15 +1,22 @@
 import 'order_fulfillment.dart';
 import 'bike_delivery.dart';
-import 'airplane.dart';
+import 'airplane_delivery.dart';
+import 'car_delivery.dart';
 
 void main() {
-  
-  var fulfillment = OrderFulfillment(BikeDelivery()); // inject BikeDelivery
-  fulfillment.processOrder("001", "Downtown");
-  fulfillment.shipOrder("002", "Uptown");
+  print("\n------------------Special Delivery---------------");
 
-  
-  var airFulfillment = OrderFulfillment(Airplane());
-  airFulfillment.processOrder("003", "Manila");
-  airFulfillment.shipOrder("004", "Cebu");
+  var bikesfulfillment = OrderFulfillment(BikeDelivery()); 
+  bikesfulfillment.processOrder("001", "Downtown");
+  bikesfulfillment.shipOrder("002", "Uptown");
+  print("\n");
+
+  var planesFulfillment = OrderFulfillment(Airplane());
+  planesFulfillment.processOrder("003", "Manila");
+  planesFulfillment.shipOrder("004", "Cebu");
+  print("\n");
+
+  var carsFulfillment = OrderFulfillment(CarDelivery());
+  carsFulfillment.processOrder("005", "Capinahan");
+  carsFulfillment.shipOrder("006", "Naval");
 }
